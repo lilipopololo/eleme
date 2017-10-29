@@ -31,7 +31,7 @@
       </div>
       <div v-show="detailShow" class="detail">
         <div class="detail-wrapper clearfix">
-            <div class = "detail-main">
+          <div class = "detail-main">
             <h1 class="name">{{seller.name}}</h1>
             <div class="star-wrapper">
                 <star :size="48" :score="seller.score"></star>
@@ -41,7 +41,12 @@
                 <div class="text">优惠信息</div>
                 <div class="line"></div>
             </div>
-            </div>
+            <ul v-if="seller.supports" class="supports">
+                <li class="support-item" v-for=:"item in seller.supports">
+
+                </li>
+            </ul>
+          </div>
         </div>
         <div class="detail-close" @click="hideDetail">
           <i class="icon-close">*</i>
