@@ -36,7 +36,7 @@
           <star :size="48" :score="seller.score"></star>
           </div>
         </div>
-        <div class="detail-close">
+        <div class="detail-close" @click="hideDetail">
           <i class="icon-close">*</i>
         </div>
       </div>
