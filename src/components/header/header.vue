@@ -42,8 +42,9 @@
                 <div class="line"></div>
             </div>
             <ul v-if="seller.supports" class="supports">
-                <li class="support-item" v-for=:"item in seller.supports">
-
+                <li class="support-item" v-for="item in seller.supports">
+                    <span class="icon" :class="classMap[seller.supports[$index].type]"></span>
+                    <span class="text">{{seller.supports[$index].description}}</span>
                 </li>
             </ul>
           </div>
@@ -239,7 +240,35 @@
                         border-bottom: 1px solid rgba(255,255,255,0.2) 
                       .text
                         padding: 0 12px
+                        font-weight:700
                         font-size:14px
+                  .supports
+                    width :80%
+                    margin:0 auto
+                    .support-item
+                      padding:0 12px
+                      margin-bottom:12px
+                      font-size:0
+                      &:last-child
+                        margin-bottom:0
+                      icon
+                        display:inline-block
+                        width:16px
+                        height:16px
+                        vertival-align:top
+                        margin-right:6px
+                        background-size:16px 16px
+                        background-repeat:no-repeat
+                        &.decrease
+                            bg-image ('decrease_1')
+                        &.discount
+                            bg-image ('discount_1')
+                        &.guarantee
+                            bg-image ('guarantee_1')
+                        &.invoice
+                            bg-image ('invoice_1')
+                        &.special
+                            bg-image ('special_1')
             .detail-close
               position:relative
               width:32px
