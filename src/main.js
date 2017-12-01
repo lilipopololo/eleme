@@ -12,8 +12,6 @@ import VueResource from 'vue-resource';
 Vue.use(VueResource);
 Vue.use(VueRouter);
 
-Vue.config.productionTip = false;
-
 // var app = Vue.extend(App);
 
 // var router = new VueRouter();
